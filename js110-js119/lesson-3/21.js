@@ -97,7 +97,6 @@ while (true) {
     const PLAYER_DECK = [];
     const DEALER_DECK = [];
     let isPlayerBusted = false;
-    let isDealerBusted = false;
     let isPlayerStay = false;
     let isDealerStay = false;
 
@@ -143,7 +142,6 @@ while (true) {
             lineBreak();
             displayCards(PLAYER_DECK, DEALER_DECK, false);
             console.log('You win!');
-            isDealerBusted = true;
         } else {
             isDealerStay = true;
         }
