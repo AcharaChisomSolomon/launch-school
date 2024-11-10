@@ -45,12 +45,18 @@ function dealCards(deck, playerDeck, dealerDeck) {
 
 function specialJoin(arr, isDealer=false) {
     const newArr = arr.map(card => card[1]);
-    return newArr.slice(0, arr.length - 1).join(', ') + ' and ' + `${isDealer ? 'unknown card' : newArr[arr.length - 1]}`;
+    return newArr
+    .slice(0, arr.length - 1)
+    .join(', ') + 
+    ' and ' + 
+    `${isDealer ? 'unknown card' : newArr[arr.length - 1]}`;
 }
 
 function displayCards(playerDeck, dealerDeck, hideDealerCard=true) {
-    console.log(`Dealer ${!hideDealerCard ? 'had': 'has'}: ${specialJoin(dealerDeck, hideDealerCard)}`);
-    console.log(`You ${!hideDealerCard ? 'had' : 'have'}: ${specialJoin(playerDeck)}`);
+    console.log(
+        `Dealer ${!hideDealerCard ? 'had': 'has'}: ${specialJoin(dealerDeck, hideDealerCard)}`);
+    console.log(
+        `You ${!hideDealerCard ? 'had' : 'have'}: ${specialJoin(playerDeck)}`);
     lineBreak();
 }
 
